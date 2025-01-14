@@ -16,7 +16,7 @@ def twoSum(nums: list[int], target: int) -> list[int]:
     # This down below would be the most optimal solution and the way it works is
     # that we basically make an empty dict/hashmap then check to see if the
     # difference between the target and the n we are currently on is in that new
-    # map, if it exists we retun the dicts value which represents the indexes
+    # map, if it exists we retun the dicts value which represents the indexes. O(n)
     prevMap = {}  # val : index
 
     for i, n in enumerate(nums):
