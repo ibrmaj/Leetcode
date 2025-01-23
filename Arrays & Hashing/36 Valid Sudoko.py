@@ -1,5 +1,5 @@
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
         # Check rows
         for row in board:
             row_dict = {str(x): 0 for x in range(1, 10)}
