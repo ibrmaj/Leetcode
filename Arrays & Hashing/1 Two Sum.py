@@ -25,7 +25,7 @@ def twoSum(nums: list[int], target: int) -> list[int]:
             return [prevMap[diff], i]
         prevMap[n] = i
 
-print(twoSum([2,5,5,11], 10))
+print(twoSum([2,5,5,5, 1, 11], 6))
 
 
 
