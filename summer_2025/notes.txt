@@ -1,3 +1,0 @@
-Basic Patterns I noticed while doing these:
-- Arrays & Hashing:
-    -
