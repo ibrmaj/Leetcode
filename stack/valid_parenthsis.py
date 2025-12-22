@@ -3,25 +3,27 @@ def isValid(s: str) -> bool:
     # bracket type is always closed and is always closed with the appropriate
     # close type, so what we do is simple, loop through the string and if the
     # bracket is an open we add it to the stack and if its a close type we pop
-    # from the stack and if they are pairs we are good and we keep going
-    # but if they are not then false
+    # from the stack and check
     # if the stack is empty at the end we good
 
-    opener = '([{'
-    closer = ')]}'
-    pairs = {'(' : ')', '[' : ']', '{' : '}'}
-    stack = []
+    openings = []
 
     for i in s:
-        if i in opener:
-            stack.append(i)
-        elif len(stack) == 0 and i in closer: # starting off with a closing aint gonna cut it bud
-            return False
-        elif i in closer:
-            x = stack.pop()
-            if pairs[x] != i:
+        if i in '([{':
+            openings.append(i)
+        else:
+            if len(openings) == 0: # we need this because it means we are
+                # checking for a close when there is open so it must be False
                 return False
-    if len(stack) > 0:
+
+            chk = openings.pop()
+            if i == ')' and chk != '(':
+                return False
+            elif i == ']' and chk != '[':
+                return False
+            elif i == '}' and chk != '{':
+                return False
+    if len(openings) != 0 :
         return False
     return True
 
